@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Pokecard } from 'components'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pokecard
+        imgUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+        pokemon={{ name: 'bulba', type: 'grass', number: 1 }}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
