@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { PokemonTypes } from 'types'
 
 export const CardWrapper = styled.div`
   width: 250px;
@@ -8,8 +9,14 @@ export const CardWrapper = styled.div`
 
 const getBackgroundColor = (pokemonType: string) => {
   // TODO improve colors and add every type
-  if (pokemonType === 'grass') return 'green'
-  if (pokemonType === 'water') return 'blue'
+  switch (pokemonType) {
+    case PokemonTypes.Grass:
+      return 'green'
+    case PokemonTypes.Water:
+      return 'blue'
+    default:
+      return ''
+  }
 }
 
 export const PokemonSprite = styled.img<{ pokemonType: string }>`
