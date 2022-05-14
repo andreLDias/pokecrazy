@@ -10,22 +10,18 @@ import {
 } from './Pokecard.styles'
 
 interface PokecardProps {
-  imgUrl: string
-  shinyImgUrl?: string
-  pokemon: Pokemon
+  pokemon?: Pokemon
 }
 
-const Pokecard: FunctionComponent<PokecardProps> = ({
-  imgUrl,
-  shinyImgUrl,
-  pokemon,
-}) => {
+const Pokecard: FunctionComponent<PokecardProps> = ({ pokemon }) => {
+  if (!pokemon) return null
+
   return (
     <CardWrapper>
-      <PokemonSprite src={imgUrl} pokemonType={pokemon.type} />
-      {shinyImgUrl && (
-        <PokemonSprite src={shinyImgUrl} pokemonType={pokemon.type} />
-      )}
+      <PokemonSprite src={pokemon.sprites.default} pokemonType={pokemon.type} />
+      {/* {pokemon.sprites.shiny && (
+        <PokemonSprite src={pokemon.sprites.shiny} pokemonType={pokemon.type} />
+      )} */}
       <PokemonInfoWrapper>
         <PokemonName>{pokemon.name}</PokemonName>
         <TypeIcon src={iconGetter(pokemon)} />

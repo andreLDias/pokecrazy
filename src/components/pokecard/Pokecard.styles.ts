@@ -14,6 +14,10 @@ const getBackgroundColor = (pokemonType: string) => {
       return 'green'
     case PokemonTypes.Water:
       return 'blue'
+    case PokemonTypes.Fire:
+      return 'red'
+    case PokemonTypes.Bug:
+      return 'purple'
     default:
       return ''
   }

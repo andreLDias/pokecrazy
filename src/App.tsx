@@ -1,13 +1,10 @@
 import './App.css'
-import { Pokecard } from 'components'
+import PokemonList from 'components/pokemonList'
 
 function App() {
   return (
     <div className="App">
-      <Pokecard
-        imgUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-        pokemon={{ name: 'bulba', type: 'grass', number: 1 }}
-      />
+      <PokemonList />
     </div>
   )
 }
